@@ -67,6 +67,23 @@ If the wizard does not appear then either type in "kinto.sh" in your application
 ~/.config/kinto/gui/kinto-gui.py
 ```
 
+**Troubleshoot2**
+
+User
+~/.config/kinto/gui/kinto-gui.py
+Traceback (most recent call last):
+  File "/home/jidanyu/.config/kinto/gui/kinto-gui.py", line 7, in <module>
+    gi.require_version('Vte', '2.91')
+  File "/usr/lib/python3/dist-packages/gi/__init__.py", line 129, in require_version
+    raise ValueError('Namespace %s not available' % namespace)
+ValueError: Namespace Vte not available
+
+```
+sudo apt update
+sudo apt install gir1.2-vte-2.91
+```
+
+
 **Issues with Numpad?**
 
 Try toggling numlock on & off (clear key on official mac keyboards). If it still does not work then restart the Kinto service and try toggling the numlock/clear key again, it will likely work after that. #369
